@@ -46,15 +46,17 @@ namespace UnitTestProject2
         [TestMethod]
         public void TestMethod1()
         {
-            var bt = session.FindElementByName("Button");
-            bt.Click();
+            var textBox = session.FindElementByAccessibilityId("txtEmoji");
+            textBox.SendKeys("000");
         }
 
         [TestMethod]
         public void TestMethod2()
         {
-            var view = session.FindElementByName("登录");
-            view.Click();
+            var page = session.PageSource;
+            var webView = session.FindElementByAccessibilityId("webview1");
+            var input = webView.FindElementByName("searchbox");
+            input.SendKeys("100");
         }
     }
 }

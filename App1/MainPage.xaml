@@ -8,9 +8,18 @@
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
-    <Grid Margin="0,316,0,0">
-        <WebView x:Name="webview1" Source="http://www.coding.net" HorizontalAlignment="Stretch" Margin="0,0,0,0" Grid.RowSpan="2" VerticalAlignment="Stretch"/>
-        <Button Content="Button" HorizontalAlignment="Left" Margin="237,-218,0,0" VerticalAlignment="Top"/>
-
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40"/>
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <TextBox Text="111" x:Name="txtEmoji" ></TextBox>
+        
+        <WebView x:Name="webview1" AutomationProperties.AutomationId="webview1" Source="http://localhost:3000" Grid.ColumnSpan="2" Grid.Row="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
+        <!--<WebView x:Name="webview1" Source="ms-appx-web:///html//index.html" Grid.ColumnSpan="2" Grid.Row="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>-->
     </Grid>
 </Page>
